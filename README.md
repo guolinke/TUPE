@@ -13,14 +13,14 @@ This repo is to demonstrate our proposed method, a new positional encoding for T
 Due to limited computational resources, we use the most widely-used pre-training model, BERT (base), for verification. However, please note that our method could be used for larger (and better) Transformer-based models, like RoBERTa, ELECTRA and UniLM, and further improve them. Besides, since the modification is simple and easy, you can easily apply TUPE in your models.
 
 Our implementation is based on [fairseq](https://github.com/pytorch/fairseq), with several changes:
-1. update [`fairseq/modules/transformer_sentence_encoder.py`](fairseq/modules/transformer_sentence_encoder.py) and [`fairseq/modules/multihead_attention.py`](fairseq/modules/multihead_attention.py) for united positional encoding.
+1. update [`fairseq/modules/transformer_sentence_encoder.py`](fairseq/modules/transformer_sentence_encoder.py) and [`fairseq/modules/multihead_attention.py`](fairseq/modules/multihead_attention.py) for untied positional encoding.
 2. implement BERT [`fairseq/models/bert/model.py`](fairseq/models/bert/model.py), based on the code of RoBERTa.
 3. some other minor changes to support `max-epoch` with `warmup-ratio` in finetune, instead of setting different `total-num-update` and `warmup-updates` for different tasks.
 
 
 ## Requirements and Installation
 
-More details see [fairseq](https://github.com/pytorch/fairseq). Berifly,
+More details see [fairseq](https://github.com/pytorch/fairseq). Briefly,
 
 * [PyTorch](http://pytorch.org/)
 * Python version >= 3.5
