@@ -1,6 +1,6 @@
 # TUPE (Transformer with Untied Positional Encoding)
 
-Implementation for the paper [Rethinking the Positional Encoding in Language Pre-training](TBD). 
+Implementation for the paper [Rethinking the Positional Encoding in Language Pre-training (To update)](TBD). 
 
 <p align="center">
 <img src="tupe.png" width="400">
@@ -65,7 +65,7 @@ MAX_POSITIONS=512
 MAX_SENTENCES=16
 UPDATE_FREQ=1
 SEED=your_seed
-python train.py ${DATA_DIR} --fp16 --num-workers 16 --ddp-backend=c10d \
+python train.py $DATA_DIR --fp16 --num-workers 16 --ddp-backend=c10d \
     --task masked_lm --criterion masked_lm --arch bert_base \
     --sample-break-mode complete --tokens-per-sample $MAX_POSITIONS \
     --optimizer adam --adam-betas '(0.9, 0.999)' --adam-eps 1e-6 --clip-norm 1.0 \
