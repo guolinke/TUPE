@@ -1,6 +1,6 @@
 # TUPE (Transformer with Untied Positional Encoding)
 
-Implementation for the paper [Rethinking the Positional Encoding in Language Pre-training](https://arxiv.org/abs/2006.15595). 
+Implementation for the paper [Rethinking Positional Encoding in Language Pre-training](https://arxiv.org/abs/2006.15595). 
 
 <p align="center">
 <img src="tupe.png" width="400">
@@ -133,7 +133,7 @@ We also release the [checkpoint](https://guolinke.blob.core.windows.net/tupe/tup
 You can cite our paper by
 ```
 @article{ke2020rethinking,
-  title={Rethinking the Positional Encoding in Language Pre-training},
+  title={Rethinking Positional Encoding in Language Pre-training},
   author={Ke, Guolin and He, Di and Liu, Tie-Yan},
   journal={arXiv preprint arXiv:2006.15595},
   year={2020}
