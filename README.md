@@ -1,6 +1,6 @@
 # TUPE (Transformer with Untied Positional Encoding)
 
-Implementation for the paper [Rethinking the Positional Encoding in Language Pre-training (To update)](TBD). 
+Implementation for the paper [Rethinking the Positional Encoding in Language Pre-training](https://arxiv.org/abs/2006.15595). 
 
 <p align="center">
 <img src="tupe.png" width="400">
