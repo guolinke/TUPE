@@ -131,7 +131,11 @@ We also release the [checkpoint](https://guolinke.blob.core.windows.net/tupe/tup
 ## Reference
 
 You can cite our paper by
-
-@article{
-
+```
+@article{ke2020rethinking,
+  title={Rethinking the Positional Encoding in Language Pre-training},
+  author={Ke, Guolin and He, Di and Liu, Tie-Yan},
+  journal={arXiv preprint arXiv:2006.15595},
+  year={2020}
 }
+```
