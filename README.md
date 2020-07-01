@@ -8,9 +8,14 @@ Implementation for the paper [Rethinking Positional Encoding in Language Pre-tra
 
 ## Brief Introduction
 
-This repo is to demonstrate our proposed method, a new positional encoding for Transformer. The algorithm details could be found in our paper.
+This repo is to demonstrate TUPE (Transformer with Untied Positional Encoding). The algorithm details could be found in our paper. TUPE can outperform other baselines on GLUE benchmark by a large margin. In particular, it can achieve a higher score than baselines while only using 30% pre-training computational costs. 
 
-Due to limited computational resources, we use the most widely-used pre-training model, BERT (base), for verification. However, please note that our method could be used for larger (and better) Transformer-based models, like RoBERTa, ELECTRA and UniLM, and further improve them. Besides, since the modification is simple and easy, you can easily apply TUPE in your models.
+<p align="center">
+<img src="exp.png" width="600">
+</p>
+
+
+Due to limited computational resources, we use the most widely-used pre-training model, BERT-Base, for verification. However, please note that our method could be used for larger (and better) Transformer-based models, like RoBERTa, ELECTRA and UniLM, and further improve them. Besides, since the modification is simple and easy, you can easily apply TUPE in your models.
 
 Our implementation is based on [fairseq](https://github.com/pytorch/fairseq), with several changes:
 1. update [`fairseq/modules/transformer_sentence_encoder.py`](fairseq/modules/transformer_sentence_encoder.py) and [`fairseq/modules/multihead_attention.py`](fairseq/modules/multihead_attention.py) for untied positional encoding.
