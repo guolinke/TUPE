@@ -19,8 +19,7 @@ Due to limited computational resources, we use the most widely-used pre-training
 
 Our implementation is based on [fairseq](https://github.com/pytorch/fairseq), with several changes:
 1. update [`fairseq/modules/transformer_sentence_encoder.py`](fairseq/modules/transformer_sentence_encoder.py) and [`fairseq/modules/multihead_attention.py`](fairseq/modules/multihead_attention.py) for untied positional encoding.
-2. implement BERT [`fairseq/models/bert/model.py`](fairseq/models/bert/model.py), based on the code of RoBERTa.
-3. some other minor changes to support `max-epoch` with `warmup-ratio` in finetune, instead of setting different `total-num-update` and `warmup-updates` for different tasks.
+2. some other minor changes to support `max-epoch` with `warmup-ratio` in finetune, instead of setting different `total-num-update` and `warmup-updates` for different tasks.
 
 
 ## Requirements and Installation
