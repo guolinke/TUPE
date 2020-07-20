@@ -4,6 +4,7 @@ from multiprocessing import Pool
 
 import spacy
 
+assert spacy.__version__ <= '2.2.4', "Using spacy 2.3.x will break the handle of special tokens, like </s>. "
 nlp = None
 
 def init():
