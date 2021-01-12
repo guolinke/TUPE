@@ -109,9 +109,9 @@ def multi_head_attention_forward(query,                           # type: Tensor
             attn_output_weights += attn_mask
 
     if attn_bias is not None:
-        attn_output_weights = attn_output_weights.view(bsz, num_heads, tgt_len, src_len)
+        #attn_output_weights = attn_output_weights.view(bsz, num_heads, tgt_len, src_len)
         attn_output_weights += attn_bias
-        attn_output_weights = attn_output_weights.view(bsz * num_heads, tgt_len, src_len)
+        #attn_output_weights = attn_output_weights.view(bsz * num_heads, tgt_len, src_len)
 
     if key_padding_mask is not None:
         attn_output_weights = attn_output_weights.view(bsz, num_heads, tgt_len, src_len)

@@ -241,6 +241,8 @@ class TransformerSentenceEncoder(nn.Module):
         if rel_pos_bias is not None:
             abs_pos_bias += rel_pos_bias
 
+        abs_pos_bias = abs_pos_bias.unsqueeze(0).expand(x.size(0), -1, -1, -1).reshape(-1, seq_len, seq_len)
+
         inner_states = []
         if not last_state_only:
             inner_states.append(x)
