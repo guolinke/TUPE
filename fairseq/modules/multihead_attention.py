@@ -71,9 +71,9 @@ def multi_head_attention_forward(query,                           # type: Tensor
         k = torch.cat([k, bias_k.repeat(1, bsz, 1)])
         v = torch.cat([v, bias_v.repeat(1, bsz, 1)])
         if attn_mask is not None:
-            attn_mask = pad(attn_mask, (0, 1))
+            attn_mask = F.pad(attn_mask, (0, 1))
         if key_padding_mask is not None:
-            key_padding_mask = pad(key_padding_mask, (0, 1))
+            key_padding_mask = F.pad(key_padding_mask, (0, 1))
     else:
         assert bias_k is None
         assert bias_v is None
@@ -95,9 +95,9 @@ def multi_head_attention_forward(query,                           # type: Tensor
         k = torch.cat([k, torch.zeros((k.size(0), 1) + k.size()[2:], dtype=k.dtype, device=k.device)], dim=1)
         v = torch.cat([v, torch.zeros((v.size(0), 1) + v.size()[2:], dtype=v.dtype, device=v.device)], dim=1)
         if attn_mask is not None:
-            attn_mask = pad(attn_mask, (0, 1))
+            attn_mask = F.pad(attn_mask, (0, 1))
         if key_padding_mask is not None:
-            key_padding_mask = pad(key_padding_mask, (0, 1))
+            key_padding_mask = F.pad(key_padding_mask, (0, 1))
 
     attn_output_weights = torch.bmm(q, k.transpose(1, 2))
     assert list(attn_output_weights.size()) == [bsz * num_heads, tgt_len, src_len]
