@@ -225,7 +225,7 @@ class TransformerSentenceEncoder(nn.Module):
         # Assume the input is ordered. If your input token is permuted, you may need to update this accordingly
         weight = self.pos_ln(self.pos.weight[:seq_len + 1, :])
         pos_q, pos_k = self.pos_proj(weight).reshape(seq_len + 1, 2, self.num_attention_heads, -1).permute(1, 2, 0, 3)
-        pos_q *= self.pos_scaling
+        pos_q = pos_q * self.pos_scaling
         abs_pos_bias = torch.bmm(pos_q, pos_k.transpose(1, 2))
         # p_0 \dot p_0 is cls to others
         cls_2_other = abs_pos_bias[:, 0, 0]
